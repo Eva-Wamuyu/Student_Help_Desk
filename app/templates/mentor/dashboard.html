@@ -3,37 +3,24 @@
 <table class="table table-dark">
     <thead>
       <tr>
-        <th scope="col">
-        </th>
         <th scope="col">Student Name</th>
         <th scope="col">Student Issue</th>
-        <th scope="col">Handle</th>
+        <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>{{ student }}</td>
-        <td>{{ req.message }}</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        {% for message, req in reqs %}
-       <td>{{ req }}</td>
-       {% endfor %}
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
+
+      {% for issue in issue %}
+     <tr>
+        <td>{{issue.student_name(issue._id)}}</td>
         
-        <td>facebook</td>
+        <td>{{ issue.message }}</td>
        
-        <td>{{ req.message }}</td>
-      
-        <td>@twitter</td>
+        <td>{{issue.is_open}}</td>
+
+        <td><button type="button" class="btn btn-light">Open</button></td>
       </tr>
+      {% endfor %}
     </tbody>
   </table>
 {%endblock content%}

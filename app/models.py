@@ -44,4 +44,9 @@ class Request(db.Model):
     self.time = time
     self.mentor = mentor
     self.student = student
+
+  def student_name(self, anId):
+      requiredId = Request.query.get(anId).student_id
+      return User.query.get(requiredId).name
+   
     

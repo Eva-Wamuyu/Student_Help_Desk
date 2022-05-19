@@ -6,11 +6,16 @@ mentorbp = Blueprint("mentorbp",__name__,static_folder="./../static",template_fo
 
 
 @mentorbp.route("/mentor")
-def mentorLanding():
+def ProblemRequests():
     mentor = User.query.get(2)
-    student = User.query.get(3)
-    print(student)
-   
-    req = Request.query.filter_by(mentor=mentor).all()
-    print(req)
-    return render_template('mentor/dashboard.html', req=req, student=student)
+
+    issue = Request.query.filter_by(mentor=mentor).all()
+    print(issue)
+    return render_template('mentor/dashboard.html', issue=issue)
+
+
+
+
+    
+
+
