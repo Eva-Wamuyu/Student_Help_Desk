@@ -17,10 +17,10 @@ def create_app():
     #from .auth import auth
     #from student import studentbp
     # fromadmin import adminbp
-    #from mentor import mentorbp
+    from .mentor.views import mentorbp
     # app.register_blueprint(studentbp, url_prefix="/")
     # app.register_blueprint(adminpb, url_prefix="/admin")
-    # app.register_blueprint(mentorbp, url_prefix="/mentor")
+    app.register_blueprint(mentorbp, url_prefix="/mentor")
     
     from .models import User,Request
     #create_database(app)
