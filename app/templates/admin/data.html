@@ -1,0 +1,31 @@
+{% extends './base.html' %}
+
+
+
+{% block content %}
+<div class="container">
+  <h3 class="text-center">
+    {{header}}
+  </h3>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Email</th>
+        <th scope="col">Name</th>
+        <th scope="col">.</th>
+      </tr>
+    </thead>
+    <tbody>
+      {%for item in items%}
+      <tr>
+        <td>{{item.email}}</td>
+        <td>{{item.name}}</td>
+        <td><a class="btn" href="{{url_for('adminbp.delete',num=item._id)}}">Delete</a> </td>
+        {%endfor%}
+        </tr>
+    </tbody>
+  </table>
+
+</div>
+  
+{% endblock %}

@@ -21,14 +21,14 @@
           class="form-control dc"
           placeholder="Enter Username"
         />
-        <label for="role">Role</label>
+        <!-- <label for="role">Role</label>
         <input
           type="text"
           id="role"
           name="role"
           class="form-control dc"
           placeholder="Student/Mentor"
-        />
+        /> -->
         <!-- <label for="photo">photo</label>
         <input
           type="text"
@@ -45,14 +45,30 @@
           class="form-control dc"
           placeholder="upload photo"
         /> -->
-        <label for="stack">stack</label>
+        <div class="form-group">
+          <label for="stack">Role</label>
+          <select class="form-control" name="select">
+            <option value="Mentor">Mentor</option> 
+            <option value="Student">Student</option>
+          </select>
+
+        </div>
+        <div class="form-group">
+          <label for="stack">Stack</label>
+          <select id="stack" class="form-control" name="select">
+            <option value="Full Stack">Full stack</option> 
+            <option value="Android">Android</option>
+          </select>
+        </div>
+
+        <!-- <label for="stack">stack</label>
         <input
           type="text"
           id="photo"
           name="stack"
           class="form-control dc"
           placeholder="fullstack/android"
-        />
+        /> -->
         <label for="password1">Password</label>
         <input
           type="password"
@@ -71,7 +87,7 @@
         />
         <br />
         <div align="center">
-          <button class="btn btn-primary" type="submit">Add</button>
+          <button class="btn btn btn-sm btn-outline-secondary me-2" type="submit">Add</button>
         </div>
       </div>
     </form>

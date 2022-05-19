@@ -5,6 +5,7 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
+    background-color: #DCE1DE;
 }
 
 /* ALL CONTENT */
@@ -13,7 +14,6 @@ body{
     padding: 3em;
     margin-top: calc(79.1px);
     margin-left: 14.65rem;
-    background-color: #DCE1DE;
     /* height: 1000vh; */
 }
 
@@ -121,7 +121,28 @@ body{
 
 
 
-
+#login{
+    background-color: #1F2421 !important;
+    min-height: 100vh !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#field{
+    width: 50% !important;
+    display: block;
+    margin: 2rem;
+}
+#svg{
+    width: 40% !important;
+    margin: 3rem 0;
+}
+.card{
+    display: flex !important;
+    flex-direction: row !important;
+    width: 55%;
+}
 
 
 

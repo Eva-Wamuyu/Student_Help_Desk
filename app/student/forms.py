@@ -4,7 +4,7 @@ from wtforms.validators import DataRequired
 
 
 class MakeRequest(FlaskForm):
-  message = SelectField("What is your issue?",choices=[("IP","IP"),("content","content"),("other","other")])
+  message = SelectField("The blocker you'd like to be addressed",choices=[("IP","IP"),("Content","content"),("Bugs","Bugs"),("other","other")])
   submit = SubmitField("send")
 
 class StudentProfile(FlaskForm):
