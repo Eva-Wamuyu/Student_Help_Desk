@@ -38,13 +38,15 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
-
-    @app.route("/")
-    def index():
-        return redirect(url_for("authbluep.login"))
-    #
     return app
 
+
+
+
+
+
+
+   
 # def create_database(app):
 #        if not path.exists("app/" + DB_NAME):
 #         db.create_all(app=app)
