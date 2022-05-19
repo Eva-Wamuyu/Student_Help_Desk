@@ -9,7 +9,7 @@
 
   <script src="https://kit.fontawesome.com/9d6964b900.js" crossorigin="anonymous"></script>
   {% block styles %}
-    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
   {% endblock %}
 
 
@@ -73,7 +73,7 @@
               </div>
           </div>
           <div class="col py-3">
-            <div class="container-fluid" id="all-content">
+            <div class="container" id="all-content">
               {% block content %}
                 
               {% endblock %}
