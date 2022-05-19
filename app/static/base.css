@@ -5,16 +5,19 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
+    overflow-x: hidden;
+    background-color: #DCE1DE;
 }
 
 /* ALL CONTENT */
 #all-content{
-    width: calc(100% - 13.92rem);
+    width: calc(100% - 11.92rem);
     padding: 3em;
     margin-top: calc(79.1px);
     margin-left: 14.65rem;
-    background-color: #DCE1DE;
-    /* height: 1000vh; */
+    min-height: 100vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 /* NAVBAR */
@@ -67,6 +70,7 @@ body{
 /* ADMIN'S DASHBOARD */
 #dash{
     padding-left: 4em;
+    overflow-x: hidden;
 }
 
 .intro{
