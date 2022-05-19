@@ -31,7 +31,9 @@ def create_app():
     #def load_user(id):
         #return User.query.get(int(id))
     
-    
+    # REGITERING BLUEPRINTS
+    from .admin import adminbp as admin_blueprint
+    app.register_blueprint(admin_blueprint)
 
 
 
