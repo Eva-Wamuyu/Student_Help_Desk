@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
+
+/* ALL CONTENT */
+#all-content{
+    width: calc(100% - 13.92rem);
+    padding: 3em;
+    margin-top: calc(79.1px);
+    margin-left: 14.65rem;
+    background-color: #DCE1DE;
+    /* height: 1000vh; */
+}
+
+/* NAVBAR */
+#fixed{
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1F2421;
+    padding-top: 8em !important;
+    max-height: calc(100vh - 95px) !important;
+    width: 15.375em;
+    position: fixed;
+    z-index: 2;
+    top: calc(95px);
+    left: 0;
+}
+
+.navigate{
+    padding: 2em 0 2em 0 !important;
+    background: #1F2421;
+    width: 100% !important;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+}
+
+.color{
+    color: #DCE1DE !important;
+}
+
+#form{
+    display: flex !important;
+    justify-content: end !important;
+}
+
+#form button{
+    color: #DCE1DE !important;
+    border: 0.025em solid #DCE1DE !important;
+}
+
+#form button:hover{
+    background-color: #DCE1DE;
+    color: #1F2421 !important;
+    box-shadow: none;
+}
+
+/*STUDENT'S DASHBOARD */
+
+/* ADMIN'S DASHBOARD */
+#dash{
+    padding-left: 4em;
+}
+
+.intro{
+    color: #1F2421;
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.desk{
+    background: linear-gradient(246.89deg, #000000 27.64%, #9CC5A1 96.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    /* text-fill-color: transparent; */
+    font-weight: 700;
+    font-size: 3em;
+}
+
+.mentor{
+    width: 65%;
+    background: #9CC5A1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3em;
+    margin: 1em 0.5em;
+    border-radius: 0.5em;
+}
+
+.student{
+    width: 65%;
+    background: #216869;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.3em;
+    margin: 1em 0.5em;
+    border-radius: 0.5em;
+}
+
+.icon{
+    color: #1F2421;
+    font-size: 10em;
+    font-weight: 700;
+}
+
+.text h2{
+    font-size: 2.3em;
+    font-weight: 700 !important;
+    color: #1F2421;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table tr:nth-child(odd){
+  background-color: #216869;
+}
+table tr:nth-child(even){
+  background-color: #9CC5A1;
+}
+thead{
+  color:white
+}

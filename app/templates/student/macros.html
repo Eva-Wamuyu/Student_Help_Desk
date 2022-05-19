@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+{% macro display(items)%}
+
+{%if items%}
+<table class="table student">
+  <thead>
+    <tr>
+      <th scope="col">Sent to</th>
+      <th scope="col">Sent at</th>
+      <th scope="col">Message</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for item in items%}
+    <tr>
+      <td>{{item.getMentor(item._id)}}</td>
+      <td>{{item.time}}</td>
+      <td>{{item.message}}</td>
+      {% if item.is_open %}
+      <td><a class="btn" href="{{url_for('studentbp.closeRequest',id=item._id)}}">close</a>  </td>
+      {%else%}
+      <td>
+      </td>
+      {%endif%}
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%else%}
+<p>
+  None
+</p>
+{%endif%}
+
+{%endmacro%}

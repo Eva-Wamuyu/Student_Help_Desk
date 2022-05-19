@@ -1,0 +1,57 @@
+{% extends './base.html' %}
+
+
+{% block content %}
+<h2>Hello {{name}}</h2>
+{%if mentors %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Avatar</th>
+      <th scope="col">Name</th>
+      <th scope="col">Stack</th>
+      <th scope="col">Status</th>
+      <th scope="col">Req</th>
+    </tr>
+  </thead>
+  <tbody>
+    {%for mentor in mentors%}
+    <tr>
+      {% if mentor.image == none %}
+      <td><img height="3px" width="3px" src="{{mentor.image}}" alt="{{mentor.name}}"></td>
+      {%else%}
+      <td><img height="75px" width="75px"  src="../../static/assets/avatar.png" alt="{{mentor.name}}"></td>
+      {%endif%}
+      
+      <td>{{mentor.name}}</td>
+      <td>{{mentor.stack}}</td>
+
+      {% if mentor.is_present == True %}
+       <td>Active</td>
+      {%else%}
+      <td>Break</td>
+      {%endif%}
+
+      
+      <td><a  class="btn"  href="{{url_for('studentbp.queryfunc',askwho=mentor._id)}}">Ask</a></td>
+    
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%else%}
+<p>
+  No Tutors
+</p>
+{%endif%}
+
+{% endblock %}
+
+
+
+
+
+
+
+

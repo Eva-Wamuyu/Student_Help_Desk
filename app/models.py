@@ -1,4 +1,4 @@
-from . import db
+from app import db
 from werkzeug.security import generate_password_hash,check_password_hash
 
 
@@ -44,4 +44,13 @@ class Request(db.Model):
     self.time = time
     self.mentor = mentor
     self.student = student
+
+
+  def getMentor(self,anId):
+    requiredId = Request.query.get(anId).mentor_id
+    return User.query.get(requiredId).name
+
+  def getStudent(self,anId):
+    requiredId = Request.query.get(anId).student_id
+    return User.query.get(requiredId).studentname
     

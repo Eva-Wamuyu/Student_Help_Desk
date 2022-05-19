@@ -1,0 +1,27 @@
+{% extends '/base.html' %}
+
+
+{% block content %}
+
+
+<div class="container text-center">
+<p>
+  Sent successfully
+ <br>
+  <button class="btn px-3" onclick="goBack()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+</p>
+ 
+
+</div>
+
+  
+
+
+<script>
+  function goBack(){
+ 
+    window.history.back();
+    
+  }
+</script>
+{% endblock %}

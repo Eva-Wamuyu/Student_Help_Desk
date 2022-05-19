@@ -1,6 +1,6 @@
 from datetime import datetime
 from xxlimited import new
-from flask import Flask
+from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
@@ -13,14 +13,14 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'postgres://sycqczbabbwzls:12f6bc1d345e624ebf3698bbdf8c840cbb65b9a28d45c4614a738038ba9ea60b@ec2-54-86-224-85.compute-1.amazonaws.com:5432/d1kk9clmv4217h'
     db.init_app(app)
-    # from .views import views
+    # from .views import viewsc
     #from .auth import auth
-    #from student import studentbp
-    # fromadmin import adminbp
-    #from mentor import mentorbp
-    # app.register_blueprint(studentbp, url_prefix="/")
-    # app.register_blueprint(adminpb, url_prefix="/admin")
-    # app.register_blueprint(mentorbp, url_prefix="/mentor")
+    from .student import studentbp
+    from .admin import adminbp
+    from .mentor.views import mentorbp
+    app.register_blueprint(studentbp, url_prefix="/student")
+    app.register_blueprint(adminbp, url_prefix="/admin")
+    app.register_blueprint(mentorbp, url_prefix="/mentor")
     
     from .models import User,Request
     #create_database(app)
@@ -32,15 +32,18 @@ def create_app():
         #return User.query.get(int(id))
     
     
-
+    @app.route('/')
+    def admin():
+    
+        return render_template('admin/login.html')
 
 
 
     return app
-def create_database(app):
-    if not path.exists("website/" + DB_NAME):
-        db.create_all(app=app)
-        print("Created database!")
+# def create_database(app):
+#     if not path.exists("website/" + DB_NAME):
+#         db.create_all(app=app)
+#         print("Created database!")
 
       
 

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{%block styles%}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='./css/student.css')}}">
+{%endblock%}
+
+{% import 'student/macros.html' as macros %}
+{% block content %}
+<a  href="{{url_for('.main')}}">Mentors</a>
+<div class="container">
+  <h2>Open Requests</h2>
+<div class="container">
+{{macros.display(openReqs)}}
+</div>
+<h2>Closed Requests</h2>
+<div class="container">
+ {{macros.display(closedReqs)}}
+</div>
+</div>
+
+
+
+
+
+<style>
+ 
+</style>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

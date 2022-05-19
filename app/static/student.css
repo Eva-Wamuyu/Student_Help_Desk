@@ -1,0 +1,6 @@
+.student.tr:nth-child(even){
+  background-color: #216869 ;
+}
+.student{
+  background-color: #9CC5A1;
+}
