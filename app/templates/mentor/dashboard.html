@@ -16,9 +16,11 @@
         
         <td>{{ issue.message }}</td>
        
-        <td>{{issue.is_open}}</td>
+        <td>{{issue.is_open == False }}</td>
 
+       
         <td><button type="button" class="btn btn-light">Open</button></td>
+       
       </tr>
       {% endfor %}
     </tbody>

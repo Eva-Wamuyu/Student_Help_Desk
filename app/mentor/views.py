@@ -13,7 +13,12 @@ def ProblemRequests():
     print(issue)
     return render_template('mentor/dashboard.html', issue=issue)
 
-
+@mentorbp.route("/mentor/new")
+def studentRequests():
+    
+    student = User.query.get(3)
+    req = Request.query.filter_by(student=student).all
+    print(req)
 
 
     
