@@ -52,5 +52,8 @@ class Request(db.Model):
 
   def getStudent(self,anId):
     requiredId = Request.query.get(anId).student_id
-    return User.query.get(requiredId).studentname
+    return User.query.get(requiredId).name
     
+  def student_name(self, anId):
+      requiredId = Request.query.get(anId).student_id
+      return User.query.get(requiredId).name

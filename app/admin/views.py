@@ -77,7 +77,7 @@ def sign_up():
             db.session.commit()
             # login_user(new_user, remember=True)
             flash('User created!')
-            return redirect(url_for('.admin'))
+            return redirect(url_for('.home'))
 
     return render_template("admin/signup.html", user=current_user)
 

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 
+
+
+
+
+
 {%block styles%}
 {{super()}}
 <link rel="stylesheet"
@@ -35,6 +40,38 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+{% block links %}
+<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+  <div class="dropdown pb-4">
+      <a href="#" class="d-flex flex-column align-items-center color text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="hugenerd" width="80" height="80" class="rounded-circle">
+      </a>
+      <a class="d-flex flex-column align-items-center color text-decoration-none" href="">Student</a>
+      <a class="d-flex flex-column align-items-center color text-decoration-none" href="">student@info.com</a>
+  </div>
+  <li class="nav-item">
+      <a href="{{url_for('studentbp.main')}}" class="nav-link d-flex flex-column align-items-center color text-decoration-none">
+          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Make Request</span>
+      </a>
+  </li>
+  <li class="nav-item">
+      <a href=" {{url_for('studentbp.reqOpen')}}"  reqOpen" class="nav-link d-flex flex-column align-items-center color text-decoration-none">
+          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">My Requests</span>
+      </a>
+  </li>
+  </ul>
+{% endblock %}
 
 
 

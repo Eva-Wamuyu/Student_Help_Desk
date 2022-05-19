@@ -5,9 +5,10 @@ from .forms import MakeRequest
 from app.models import User,Request
 from app import db
 from flask_table import Table,Col
-
+from flask_login import login_required
 
 @student.route('/')
+#@login_required
 def reqOpen():
   student = User.query.get(3)
   print(student)
@@ -17,6 +18,7 @@ def reqOpen():
   return render_template("student/dashboard.html",openReqs=openReqs,closedReqs=closedReqs)
 
 @student.route("/mentors")
+#@login_required
 def main():
   mentors = User.query.filter_by(role="Mentor").all()
   allMentors = User.query.filter_by(role="Mentor").all()
@@ -35,18 +37,20 @@ def queryfunc(askwho):
     db.session.add(made_request)
     db.session.commit()
     flash("Message sent successfully")
-    return redirect(url_for('.success'))
+    return redirect(url_for('.main'))
 
   return render_template("student/form.html",form=form)
 
 
 @student.route('/request/confirm')
+#@login_required
 def success():
   return render_template("student/success.html")
 
 
 
 @student.route("/close/<id>")
+#@login_required
 def closeRequest(id):
   requestQ = Request.query.get(id)
   if requestQ.is_open == True:

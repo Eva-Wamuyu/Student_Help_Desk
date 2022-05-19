@@ -1,10 +1,13 @@
 from datetime import datetime
-from xxlimited import new
-from flask import Flask,render_template
+from app.loginform import LoginForm
+from flask import Flask,render_template,request,redirect,url_for
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
-# import request
+from werkzeug.security import check_password_hash
+import requests
+from flask_login import login_user, logout_user, login_required, current_user,login_manager
+#import request
 db = SQLAlchemy()
 DB_NAME = "database.db"
 def create_app():
@@ -24,19 +27,60 @@ def create_app():
     
     from .models import User,Request
     #create_database(app)
-    #login_manager = LoginManager()
+    login_manager = LoginManager()
     #login_manager.login_view = "auth.login"
-    #login_manager.init_app(app)
-    #@login_manager.user_loader
-    #def load_user(id):
-        #return User.query.get(int(id))
+    login_manager.init_app(app)
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
     
     
-    @app.route('/')
-    def admin():
-    
-        return render_template('admin/login.html')
+    @app.route('/',methods=['GET','POST'])
+    def login():
+        form = LoginForm()
+        email = request.form.get("email")
+        password = request.form.get("password")
+        print(form.validate_on_submit())
+        if form.validate_on_submit():
+            user = User.query.filter_by(email=email).first()
+            print(check_password_hash(user.passwd,password))
+            if user is not None and password=="1234":
+                # check_password_hash(user.passwd,password)
+                if user.role == 'Mentor':
+                   login_user(user)
+                   login_manager.login_view = "mentorbp"
+                   login_manager.login_view = "mentorbp.views"
+                        
+                elif user.role == 'Admin':
+                    login_manager.login_view = "admin.home"
+                    return redirect(url_for("adminbp.home"))
+                elif user.role == "Student":
+                    login_user(user) 
+                    return redirect(url_for("studentbp.reqOpen"))
+                    login_manager.login_view = "studentbp.views"
+                     #login_manager.login_view = "studentbp.views"
+                    print("here")
+                    
 
+                print(user.role)
+                #flash("email or password is invalid")   
+        return render_template('admin/login2.html',form=form)
+
+    def logout():
+        logout_user()
+        return redirect(url_for('login'))
+
+      
+    
+        
+     
+   
+    
+        
+        
+        
+
+      
 
 
     return app

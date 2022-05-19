@@ -1,1 +1,84 @@
-{% extends '.base.html' %}
+{% extends 'base.html' %}
+
+
+{%block content%}
+<h2 class="text-center">Here are all requests sent to you</h2>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Student Issue</th>
+        <th scope="col">State</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+
+      {% for issue in issue %}
+     <tr>
+        <td>{{issue.student_name(issue._id)}}</td>
+        
+        <td>{{ issue.message }}</td>
+
+        
+       
+        <td>{{issue.is_open == False }}</td>
+
+       
+        <td><button type="button" class="btn btn-light">Open</button></td>
+       
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{%endblock content%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block links %}
+<ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+  <div class="dropdown pb-4">
+      <a href="#" class="d-flex flex-column align-items-center color text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://github.com/mdo.png" alt="hugenerd" width="80" height="80" class="rounded-circle">
+      </a>
+      <a class="d-flex flex-column align-items-center color text-decoration-none" href="">Hello</a>
+      <a class="d-flex flex-column align-items-center color text-decoration-none" href="">mentor@info.com</a>
+  </div>
+  <li class="nav-item">
+    <!-- href="{{url_for('studentbp.main')}} -->
+      <a href="" class="nav-link d-flex flex-column align-items-center color text-decoration-none">
+          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">View Open</span>
+      </a>
+  </li>
+  <li class="nav-item">
+    <!-- " {{url_for('studentbp.reqOpen')}}" -->
+      <a href=# class="nav-link d-flex flex-column align-items-center color text-decoration-none">
+          <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">View Closed</span>
+      </a>
+  </li>
+  </ul>
+{% endblock %}
