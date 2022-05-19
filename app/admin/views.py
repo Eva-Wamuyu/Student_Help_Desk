@@ -37,10 +37,10 @@ def sign_up():
                 password1 = request.form.get("password1")
                 password2 = request.form.get("password2")
                 stack = request.form.get("stack")
-                is_present = request.form.get("is_present")
+                #is_present = request.form.get("is_present")
                 name = request.form.get("username")
                 role = request.form.get("role")
-                photo = request.form.get("photo")
+                #photo = request.form.get("photo")
 
                 email_exists = User.query.filter_by(email=email).first()
                 name_exists = User.query.filter_by(name=name).first()

@@ -21,19 +21,14 @@ def login():
                 # check_password_hash(user.passwd,password)
                 if user.role == 'Mentor':
                    register_session(form.email.data)
-                    
-                   #login_user(user)
-         
                    return redirect(url_for("mentorbp.ProblemRequests",theirNum=user._id))
                         
                 elif user.role == 'Admin':
                     register_session(form.email.data)
-                    
                     return redirect(url_for("adminbp.home"))
                 elif user.role == "Student":
                     register_session(form.email.data)
                     #login_user(user) 
-                    
                     return redirect(url_for("studentbp.reqOpen"))
                    
                      #login_manager.login_view = "studentbp.views"

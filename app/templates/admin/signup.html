@@ -11,7 +11,7 @@
           id="email"
           name="email"
           class="form-control dc"
-          placeholder="Enter Email"
+          required placeholder="Enter Email"
         />
         <label for="username">Username</label>
         <input
@@ -20,7 +20,7 @@
           name="username"
           class="form-control dc"
           placeholder="Enter Username"
-        />
+          required/>
         <!-- <label for="role">Role</label>
         <input
           type="text"
@@ -46,8 +46,8 @@
           placeholder="upload photo"
         /> -->
         <div class="form-group">
-          <label for="stack">Role</label>
-          <select class="form-control" name="select">
+          <label for="role">Role</label>
+          <select class="form-control" required name="role">
             <option value="Mentor">Mentor</option> 
             <option value="Student">Student</option>
           </select>
@@ -55,8 +55,8 @@
         </div>
         <div class="form-group">
           <label for="stack">Stack</label>
-          <select id="stack" class="form-control" name="select">
-            <option value="Full Stack">Full stack</option> 
+          <select id="stack" name="stack" class="form-control"  required name="select">
+            <option value="FStack">Full stack</option> 
             <option value="Android">Android</option>
           </select>
         </div>
@@ -69,7 +69,7 @@
           class="form-control dc"
           placeholder="fullstack/android"
         /> -->
-        <label for="password1">Password</label>
+        <label  required for="password1">Password</label>
         <input
           type="password"
           id="password1"
@@ -77,7 +77,7 @@
           class="form-control dc"
           placeholder="Enter Password"
         />
-        <label for="password2">Password Again</label>
+        <label  required for="password2">Password Again</label>
         <input
           type="password"
           id="password2"

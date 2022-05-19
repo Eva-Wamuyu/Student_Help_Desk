@@ -27,7 +27,7 @@ def main():
       mentors = User.query.filter_by(role="Mentor").all()
       allMentors = User.query.filter_by(role="Mentor").all()
       req = Request.query.filter_by().all()
-      print(User.query.get(req[0].mentor_id).name)
+      #print(User.query.get(req[0].mentor_id).name)
       return render_template("student/mentors.html",mentors=mentors,reqs=req)
   return redirect(url_for('auth.login'))
 
@@ -79,5 +79,6 @@ def confirmToken():
     except Exception as e:
       return redirect(url_for('.app.login'))
     else:
-      return user
+      #if user.role == 'Student':
+       return user
   return False

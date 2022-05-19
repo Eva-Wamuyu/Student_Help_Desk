@@ -83,7 +83,7 @@ def all():
     if confirmToken():
         getuser = confirmToken()
         mentor = User.query.filter_by(email=getuser['user']['email']).first()
-        message = f"These are the closed issues"
+        message = f"These are all the issues"
         #issue = Request.query.filter_by(mentor=mentor).all()
         issue = Request.query.filter_by(mentor_id=mentor._id).all()
         #print(issue)
