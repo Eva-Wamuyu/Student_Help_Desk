@@ -17,8 +17,9 @@ def ProblemRequests():
 def studentRequests():
     
     student = User.query.get(3)
-    req = Request.query.filter_by(student=student).all
+    req = Request.query.filter_by(student=student).all()
     print(req)
+    return render_template("/mentor/new.html", req=req)
 
 
     

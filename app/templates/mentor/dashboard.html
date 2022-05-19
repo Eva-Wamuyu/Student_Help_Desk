@@ -18,8 +18,8 @@
        
         <td>{{issue.is_open == False }}</td>
 
-       
-        <td><button type="button" class="btn btn-light">Open</button></td>
+
+        <td><button type="button" class="btn btn-light" onclick = "{{url_for('mentorbp.studentRequests')}}">Open</button></td>
        
       </tr>
       {% endfor %}
