@@ -6,81 +6,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
   <script src="https://kit.fontawesome.com/9d6964b900.js" crossorigin="anonymous"></script>
+
   {% block styles %}
     <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}">
+
   {% endblock %}
 
 
   {% block title %}
   <title>SHD</title>
   {% endblock %}
+  
 </head>
 <body>
-
-  <nav class="navbar-fixed navigate">
-    <form class="container-fluid justify-content-end" id="form">
-      <button class="btn btn-sm btn-outline-secondary me-2" type="button">
-        Account
-      </button>
-      <button class="btn btn-sm btn-outline-secondary me-2" type="button">
-        Sign out
-      </button>
-      <button class="btn btn-sm btn-outline-secondary me-2" type="button">
-        Sign in
-      </button>
-    </form>
-  </nav>
   
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 pt-5" id="fixed">
-              <div class="d-flex flex-column justify-content-center align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="lists">
-                  <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
-                      <div class="dropdown pb-4">
-                          <a href="#" class="d-flex flex-column align-items-center color text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                              <img src="https://github.com/mdo.png" alt="hugenerd" width="80" height="80" class="rounded-circle">
-                          </a>
-                          <a class="d-flex flex-column align-items-center color text-decoration-none" href="">Admin</a>
-                          <a class="d-flex flex-column align-items-center color text-decoration-none" href="">admin@info.com</a>
-                      </div>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none">
-                              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Home</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
-                              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Student</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
-                              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Program</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
-                              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Mentor</span>
-                          </a>
-                      </li>
-                      <li class="nav-item">
-                          <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
-                              <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add User</span>
-                          </a>
-                      </li>
-              </div>
-          </div>
-          <div class="col py-3">
-            <div class="container-fluid" id="all-content">
-              {% block content %}
-                
-              {% endblock %}
-              </div>
-          </div>
-      </div>
+  <div>
+    {% block content %}{% endblock %}
+
   </div>
+
+  
 
 
 <!-- JavaScript Bundle with Popper -->

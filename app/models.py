@@ -6,7 +6,7 @@ class User(db.Model):
   _id = db.Column(db.Integer, primary_key=True)
   email = db.Column(db.String,unique=True,nullable=False)
   name = db.Column(db.String,nullable=False)
-  passwd = db.Column(db.String,nullable=False)
+  password = db.Column(db.String,nullable=False)
   is_present = db.Column(db.Boolean)
   role = db.Column(db.String,nullable=False)
   photo = db.Column(db.String)
@@ -14,10 +14,10 @@ class User(db.Model):
   #request = db.relationship("Request",backref="user",lazy="dynamic")
   
 
-  def __init__(self,email,name,passwd,is_present,role,photo,stack):
+  def __init__(self,email,name,password,is_present,role,photo,stack):
     self.email = email
     self.name = name
-    self.passwd = generate_password_hash(passwd)
+    self.password = generate_password_hash(password)
     self.is_present = is_present
     self.role = role
     self.photo = photo
