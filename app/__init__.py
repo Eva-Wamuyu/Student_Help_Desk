@@ -4,15 +4,29 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
+
+
 # import request
 db = SQLAlchemy()
 DB_NAME = "database.db"
+bootstrap = Bootstrap()
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'adminbp.login'
+
+
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = "helloworld"
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'postgres://sycqczbabbwzls:12f6bc1d345e624ebf3698bbdf8c840cbb65b9a28d45c4614a738038ba9ea60b@ec2-54-86-224-85.compute-1.amazonaws.com:5432/d1kk9clmv4217h'
+    
+    # Initializing flask extensions
     db.init_app(app)
+    bootstrap.init_app(app)
+    login_manager.init_app(app)
     # from .views import views
     #from .auth import auth
     #from student import studentbp
