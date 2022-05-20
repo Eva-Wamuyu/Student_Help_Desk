@@ -23,19 +23,28 @@
   <body>
     {% import 'bootstrap/wtf.html' as wtf%}
     <div class="container-fluid" id="login">
+      
         <div class="card">
             <div id="field">
                 <form class="form form-horizontal" method="post" role="form">
                     {{login_form.hidden_tag()}}
                     {{ wtf.form_errors(login_form, hiddens="only") }}
+                    <div class="miform">
                     {{wtf.form_field(login_form.email)}}
                     {{wtf.form_field(login_form.password)}}
-                    {{wtf.form_field(login_form.remember)}}
-                    {{wtf.form_field(login_form.submit)}}
+                    </div>
+                    <div class="miform1">
+                      {{wtf.form_field(login_form.remember)}}
+                    </div>
+                    <div class="miform2">
+                      {{wtf.form_field(login_form.submit)}}
+                    </div>
                 </form>
             </div>
-            <div id="svg">
+            <div class="svg">
+              <div id="svg">
                 <img src="{{url_for('static', filename='assets/login.svg')}}" alt="">
+            </div>
             </div>
         </div>
     </div>
@@ -45,5 +54,14 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+
+
+
+
+
+
+    <script src='static/js/particles.js'></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/particles.json"></script>
   </body>
 </html>

@@ -13,13 +13,13 @@
 
 {% import 'student/macros.html' as macros %}
 {% block content %}
-<h3 class="text-center">Hello {{student}}</h3>
+<h2 class="intro1">Hello {{student}}</h2>
 <div class="container">
-  <h2>Open Requests</h2>
+  <h3 class="intro2">Open Requests</h3>
 <div class="container">
 {{macros.display(openReqs)}}
 </div>
-<h2>Closed Requests</h2>
+<h3 class="intro2">Closed Requests</h3>
 <div class="container">
  {{macros.display(closedReqs)}}
 </div>

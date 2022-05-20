@@ -198,3 +198,10 @@ def delete(num):
     return redirect(url_for('.students'))
   return redirect(url_for('.adminlogin'))
   
+
+@adminbp.route('/all')
+def all():
+    if confirmToken():
+        mentor_count = User.query.all()
+        return render_template('admin/data.html',items = mentor_count,header="All Users")
+    return redirect(url_for('.adminlogin'))

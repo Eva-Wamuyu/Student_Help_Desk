@@ -121,29 +121,6 @@ body{
 
 
 
-#login{
-    background-color: #1F2421 !important;
-    min-height: 100vh !important;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-#field{
-    width: 50% !important;
-    display: block;
-    margin: 2rem;
-}
-#svg{
-    width: 40% !important;
-    margin: 3rem 0;
-}
-.card{
-    display: flex !important;
-    flex-direction: row !important;
-    width: 55%;
-}
-
 
 
 
@@ -164,7 +141,26 @@ body{
     position: relative;
   }
 
+.intro1{
+    display: block;
+    margin-left: 1.6rem;
+    color: #1F2421;
+    font-weight: 700;
+    
 
+
+
+}
+.intro2{
+    display: block;
+    margin-left: 0.8rem;
+    background: linear-gradient(246.89deg, #000000 27.64%, #9CC5A1 96.9%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+
+}
 
 
 
