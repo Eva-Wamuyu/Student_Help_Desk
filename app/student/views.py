@@ -13,11 +13,11 @@ def reqOpen():
   if confirmToken():
       print(confirmToken())
       user = confirmToken()
-      student = User.query.filter_by(email=user['user']['email']).first()
+      studenti = User.query.filter_by(email=user['user']['email']).first()
       print(student)
-      openReqs = Request.query.filter_by(student=student).filter_by(is_open=True).all()
-      closedReqs = Request.query.filter_by(student=student).filter_by(is_open=False).all()
-      return render_template("student/dashboard.html",openReqs=openReqs,closedReqs=closedReqs)
+      openReqs = Request.query.filter_by(student=studenti).filter_by(is_open=True).all()
+      closedReqs = Request.query.filter_by(student=studenti).filter_by(is_open=False).all()
+      return render_template("student/dashboard.html",openReqs=openReqs,closedReqs=closedReqs,student=studenti.name)
   return redirect(url_for("auth.login"))
 
 @student.route("/mentors")
