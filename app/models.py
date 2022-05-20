@@ -1,4 +1,4 @@
-from . import db
+from . import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 
 
@@ -49,4 +49,4 @@ class Request(db.Model):
       requiredId = Request.query.get(anId).student_id
       return User.query.get(requiredId).name
    
-    
+
