@@ -147,6 +147,22 @@ body{
 
 
 
+.page {
+    background-color:white;
+    height: 50vh;
+    width: 50vw;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 300px;
+    border-radius: 10px;
+  
+  }
+  #particles-js{
+    height: 100vh;
+    width: 100vw;
+    background-color:black;
+    position: relative;
+  }
 
 
 
@@ -160,8 +176,51 @@ body{
 
 
 
-
-
+#login{
+    background-color: #1F2421 !important;
+    min-height: 100vh !important;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+    width: 55%;
+}
+#field{
+    background-color: #DCE1DE;
+    width: 60%;
+    padding: 3rem 4rem;
+}
+.svg{
+    background-color: #9CC5A1;
+    width: 40%;
+    padding: 3rem 2rem;
+}
+#svg{
+}
+.miform{
+    padding: 1em 1em;
+}
+.miform1,.miform3{
+    padding: 0em 1em;
+}
+.miform2{
+    padding: .7em 1em;
+}
+.miform3 p a{
+    text-decoration: none;
+    color: #216869;
+    font-weight: 700;
+}
+.miform3 p a:hover{
+    text-decoration: underline;
+    color: #216869;
+    font-size: 110%;
+}
 
 
 
