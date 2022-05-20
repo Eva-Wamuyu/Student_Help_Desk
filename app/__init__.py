@@ -1,6 +1,6 @@
 from datetime import datetime
 from xxlimited import new
-from flask import Flask
+from flask import Flask,render_template
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
@@ -30,20 +30,29 @@ def create_app():
     # from .views import views
     #from .auth import auth
     #from student import studentbp
-    # fromadmin import adminbp
-    #from mentor import mentorbp
+  
+
+    from .admin import adminbp
+    from .mentor.views import mentorbp
     # app.register_blueprint(studentbp, url_prefix="/")
-    # app.register_blueprint(adminpb, url_prefix="/admin")
-    # app.register_blueprint(mentorbp, url_prefix="/mentor")
+    app.register_blueprint(adminpb, url_prefix="/admin")
+    app.register_blueprint(mentorbp, url_prefix="/mentor")
+
     
     from .models import User,Request
-    #create_database(app)
-    #login_manager = LoginManager()
-    #login_manager.login_view = "auth.login"
-    #login_manager.init_app(app)
-    #@login_manager.user_loader
-    #def load_user(id):
-        #return User.query.get(int(id))
+    create_database(app)
+    login_manager = LoginManager()
+    login_manager.login_view = "adminbp.login"
+    login_manager.init_app(app)
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get(int(id))
+    
+    
+    @app.route('/')
+    def admin():
+    
+        return render_template('admin/login.html')
     
     # REGITERING BLUEPRINTS
     from .admin import adminbp as admin_blueprint
@@ -54,7 +63,7 @@ def create_app():
 
     return app
 def create_database(app):
-    if not path.exists("website/" + DB_NAME):
+    if not path.exists("app/" + DB_NAME):
         db.create_all(app=app)
         print("Created database!")
 

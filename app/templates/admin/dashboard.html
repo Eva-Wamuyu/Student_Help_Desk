@@ -1,30 +1,49 @@
-{% extends './base.html' %}
-
-{% block content %}
-    <div id="dash">
-        <h1 class="intro">Hello Admin, {{ users }}</h1>
-        <h1 class="desk">Welcome to student's help desk</h1>
-        
-        <div class="row">
-            <div class="col-md-6 d-flex mentor">
-                <div class="d-block mb-2 ms-3 text">
-                    <h2>Total Mentors</h2>
-                    <h2>{{ mentors }}</h2>
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid myfriend">
+    <div class="row">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 pt-5" id="fixed">
+            <div class="d-flex flex-column justify-content-center align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="lists">
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex flex-column align-items-center color text-decoration-none" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="80" height="80" class="rounded-circle">
+                        </a>
+                        <a class="d-flex flex-column align-items-center color text-decoration-none" href="">Admin</a>
+                        <a class="d-flex flex-column align-items-center color text-decoration-none" href="">admin@info.com</a>
+                    </div>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none">
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add Users</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Students</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a  ali href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Program</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Mentors</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link d-flex flex-column align-items-center color text-decoration-none>
+                            <i class="fs-4 bi-house"></i> <span class="ms-1 d-none d-sm-inline">Add User</span>
+                        </a>
+                    </li>
                 </div>
-                <div class="d-block me-3 pe-3 icon">
-                   <i class="fa-solid fa-chalkboard-user"></i> 
-                </div> 
             </div>
-            <div class="col-md-6 d-flex student">
-                <div class="d-block ms-3 ps-3 icon">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div class="d-block mb-2 me-3 text">
-                    <h2>Total Students</h2>
-                    <h2>{{ students }}</h2>
-                </div>
+            <div class="col py-3">
+                {% block signup %}{% endblock %}}
+                
             </div>
         </div>
-
     </div>
+   
+</div>
 {% endblock %}
