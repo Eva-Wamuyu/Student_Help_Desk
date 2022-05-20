@@ -1,0 +1,6 @@
+{% extends './base.html' %}
+{%block content%}
+ {% for req in req%}
+   <h1>{{ req.message}}</h1>
+  {%endfor%}
+{%endblock content%}

@@ -1,0 +1,16 @@
+.page {
+  background-color:white;
+  height: 50vh;
+  width: 50vw;
+  position: absolute;
+  margin-left: 400px;
+  margin-top: 300px;
+  border-radius: 10px;
+
+}
+#particles-js{
+  height: 100vh;
+  width: 100vw;
+  background-color:black;
+  position: relative;
+}
